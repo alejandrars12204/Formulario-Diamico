@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitudes en Línea</title>
+  <link rel="stylesheet" href="../Estilos/bootstrap.css">
+  <link rel="stylesheet" href="../Estilos/formularioDinamico.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-negro">
+        <button class="btn btn-outline-light ms-3" id="cambiarTema"> Cambiar tema </button>
+      </nav>
+    </div>
+    <section  class="container-fluid py-5">
+        <div class="container text-center">
+            <h2 class = "titulo-contacto"> Fiesta de cumple</h2>
+
+            <div class="contacto-formulario p-4">
+                <form id="formSolicitudes">
+
+                    <label for="numSolicitudes" class="form-label text-white">
+                    ¿Cuántos invitados quiere registrar?
+                    </label>
+                    <input type="number" id="numSolicitudes" min="1" max="5" value="1" class="form-control mb-3">
+
+                    <div id="solicitudesContainer" class="solicitudes-dinamicas"></div>
+                      
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../Js/formularioDinamico.js"></script>
+</body>
+</html>
