@@ -1,0 +1,51 @@
+  const btn = document.getElementById("cambiarTema");
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("claro");
+
+    // Cambiar texto del botón según el modo
+    if (document.body.classList.contains("claro")) {
+      btn.textContent = "Modo Oscuro";
+    } else {
+      btn.textContent = "Modo Claro";
+    }
+  });
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const numSolicitudesInput = document.getElementById("numSolicitudes");
+  const solicitudesContainer = document.getElementById("solicitudesContainer");
+
+  function generarSolicitudes(cantidad) {
+    solicitudesContainer.innerHTML = "";
+    for (let i = 1; i <= cantidad; i++) {
+      const div = document.createElement("div");
+      div.classList.add("solicitud");
+
+      div.innerHTML = `
+        <h5 class="text-white">Solicitud ${i}</h5>
+        <input type="text" placeholder="Nombre del invitado" class="form-control mb-2" required>
+        <input type="number" placeholder="Edad" class="form-control mb-2" required>
+        <textarea placeholder="Detalles adicionales" class="form-control"></textarea>
+      `;
+
+      solicitudesContainer.appendChild(div);
+    }
+  }
+
+  numSolicitudesInput.addEventListener("input", (e) => {
+    let cantidad = parseInt(e.target.value);
+    if (cantidad > 0 && cantidad <= 5) {
+      generarSolicitudes(cantidad);
+    }
+  });
+
+  generarSolicitudes(parseInt(numSolicitudesInput.value));
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+
+    alert("Se han registrado los inviados correctamente");
+
+    form.reset();
+    generarSolicitudes(1); // vuelve a dejar solo 1 solicitud
+  });
+});
